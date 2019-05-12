@@ -29,11 +29,9 @@ This guide has been tested on Equilinox 1.6.0, but should in principle work with
 
 ### Step 1: Install Java
 
-Equilinox is a game made with Java. It comes with its own version of Java, but that version won't work for this guide. You will need a standalone version of Java from Oracle. Make sure you get the 64-bit version. (unless your OS is 32-bit, but that is highly unlikely). If you already have installed standalone Java, you should be good to go.
+Equilinox is a game made with Java. It comes with its own version of Java, but that version won't work for this guide. You will need a standalone version of Java 8 from Oracle. Make sure you get the 64-bit version. (unless your OS is 32-bit, but that is highly unlikely). If you already have installed standalone Java, you should be good to go.
 
-Equilinox uses Java 8 by default, so that is your safest bet.
-
-If you want to squeeze the last drop of performance, you may have success installing a different version of Java from a source other than Oracle. This carries its own risks, and is beyond the scope of this guide.
+If you want to squeeze the last drop of performance, you may have success installing a different version of Java. This carries its own risks, and is beyond the scope of this guide, but is discussed in the Appendix.
 
 ### Step 2: Locate Java and Equilinox
 
@@ -125,13 +123,13 @@ When in your world, you should see RAM usage for Equilinox be above 256, but bel
 
 ### Alternative Version of Java
 
-Discussion of an alternative Java version in the Modded Minecraft community. It has risks, but may improve performance:
-
-https://www.reddit.com/r/feedthebeast/comments/as6p87/java_vms_and_you_how_to_reduce_your_ram_and_cpu/
-
 An Equilinox mod developer recommends using OpenJDK, with Java 11. OpenJDK is effectively the same as Oracle's official Java, but may contain additional fixes:
 
 https://github.com/EquilinoxModKitProject/Equilinox-Mod-Kit/wiki/Installing-Java
+
+Discussion of an alternative Java version in the Modded Minecraft community. It has risks, but may improve performance:
+
+https://www.reddit.com/r/feedthebeast/comments/as6p87/java_vms_and_you_how_to_reduce_your_ram_and_cpu/
 
 ### Java on your system path
 
