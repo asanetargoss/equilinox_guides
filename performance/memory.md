@@ -130,3 +130,7 @@ https://www.reddit.com/r/feedthebeast/comments/as6p87/java_vms_and_you_how_to_re
 An Equilinox mod developer recommends using OpenJDK, which is effectively the same as Oracle's official Java, but may contain additional fixes:
 
 https://github.com/EquilinoxModKitProject/Equilinox-Mod-Kit/wiki/Installing-Java
+
+### Java on your system path
+
+If you have permanently added Java to your system PATH, you can omit the first line in your Equilinox_launch tool.
