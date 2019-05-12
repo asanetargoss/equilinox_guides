@@ -31,6 +31,8 @@ This guide has been tested on Equilinox 1.6.0, but should in principle work with
 
 Equilinox is a game made with Java. It comes with its own version of Java, but that version won't work for this guide. You will need a standalone version of Java from Oracle. Make sure you get the 64-bit version. (unless your OS is 32-bit, but that is highly unlikely). If you already have installed standalone Java, you should be good to go.
 
+Equilinox uses Java 8 by default, so that is your safest bet.
+
 If you want to squeeze the last drop of performance, you may have success installing a different version of Java from a source other than Oracle. This carries its own risks, and is beyond the scope of this guide.
 
 ### Step 2: Locate Java and Equilinox
@@ -127,7 +129,7 @@ Discussion of an alternative Java version in the Modded Minecraft community. It 
 
 https://www.reddit.com/r/feedthebeast/comments/as6p87/java_vms_and_you_how_to_reduce_your_ram_and_cpu/
 
-An Equilinox mod developer recommends using OpenJDK, which is effectively the same as Oracle's official Java, but may contain additional fixes:
+An Equilinox mod developer recommends using OpenJDK, with Java 11. OpenJDK is effectively the same as Oracle's official Java, but may contain additional fixes:
 
 https://github.com/EquilinoxModKitProject/Equilinox-Mod-Kit/wiki/Installing-Java
 
