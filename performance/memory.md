@@ -123,6 +123,10 @@ When in your world, you should see RAM usage for Equilinox be above 256, but bel
 
 ### Alternative Version of Java
 
-Discussion of an alternative Java version in the Modded Minecraft community (has risks):
+Discussion of an alternative Java version in the Modded Minecraft community. It has risks, but may improve performance:
 
 https://www.reddit.com/r/feedthebeast/comments/as6p87/java_vms_and_you_how_to_reduce_your_ram_and_cpu/
+
+An Equilinox mod developer recommends using OpenJDK, which is effectively the same as Oracle's official Java, but may contain additional fixes:
+
+https://github.com/EquilinoxModKitProject/Equilinox-Mod-Kit/wiki/Installing-Java
