@@ -31,7 +31,7 @@ This guide has been tested on Equilinox 1.6.0, but should in principle work with
 
 Equilinox is a game made with Java. It comes with its own version of Java, but that version won't work for this guide. You will need a standalone version of Java 8 from Oracle. Make sure you get the 64-bit version. (unless your OS is 32-bit, but that is highly unlikely). If you already have installed standalone Java, you should be good to go.
 
-The version of Java recommended above is a safe choice. Depending on your needs, you may have success installing a different version of Java. This carries its own risks, and is beyond the scope of this guide, but is discussed in the Appendix.
+The version of Java recommended above is a safe choice, as it is similar to the version that Equilinox uses. Depending on your needs, you may have success installing a different version of Java. This carries its own risks, and is beyond the scope of this guide, but is discussed in the Appendix.
 
 ### Step 2: Locate Java and Equilinox
 
