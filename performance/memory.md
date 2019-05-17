@@ -23,7 +23,7 @@ This guide has been tested on Equilinox 1.6.0, but should in principle work with
 
 - Install standalone Java if you don't have it
 - Run your command line, making it use your dedicated GPU if possible
-- `java -jar [Equilinox jar] -Xmx 1024`
+- `java -jar [Equilinox jar] -Xms 1024m -Xmx 1024m`
 
 ## Steps to Fix Performance: The Guide
 
@@ -57,14 +57,14 @@ Open the new file in a text editor and type one of the following:
 
 ~~~
 export PATH="/path/to/java/installation":$PATH
-java -jar EquilinoxWindows.jar -Xmx 1024
+java -jar EquilinoxWindows.jar -Xms 1024m -Xmx 1024m
 ~~~
 
 **Equilinox_launch.bat (Powershell):**
 
 ~~~
 SET PATH=P:\ath\to\java\installation;%PATH%
-java -jar EquilinoxWindows.jar -Xmx 1024
+java -jar EquilinoxWindows.jar -Xms 1024m -Xmx 1024m
 ~~~
 
 Replace `path/to/java/installation` with the folder containing the Java program (java.exe on Windows).
@@ -73,7 +73,7 @@ Replace `EquilinoxWindows.jar` as applicable for your Equilinox installation.
 
 Once you have typed this, save the file.
 
-What does this file do? The first line temporarily helps your command line find Java. The second line tells Java to run Equilinox with up to 1024 megabytes of RAM, rather than the 256 megabytes maximum Equilinox usually uses. Other values to consider are 512 for machines with little RAM to spare, or 1536 if Equilinox's memory usage is still hovering near the max.
+What does this file do? The first line temporarily helps your command line find Java. The second line tells Java to run Equilinox with 1024 megabytes of RAM, rather than the 256 megabytes maximum Equilinox usually uses. Other values to consider are 512 for machines with little RAM to spare, or 1536 if Equilinox's memory usage is still hovering near the max.
 
 So, why might Equilinox need more RAM? Java programs like Equilinox use garbage collection to manage memory usage. The lower the max RAM, the harder the garbage collector must work to keep RAM usage under the max value, which can cause lag spikes and increased CPU usage. In addition, there may be situations where Equilinox simply needs more than 256 megabytes of RAM to run.
 
@@ -117,7 +117,7 @@ Finally, run Equilinox using your tool.
 ./Equilinox_launch.bat
 ~~~
 
-When in your world, you should see RAM usage for Equilinox be above 256, but below the max value you have set. In Task Manager or equivalent, the program will not be called Equilinox, and instead will just be called Java.
+When in your world, you should see RAM usage for Equilinox be above 256, but at or below the max value you have set. In Task Manager or equivalent, the program will not be called Equilinox, and instead will just be called Java.
 
 ## Appendix
 
