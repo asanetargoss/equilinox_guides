@@ -23,114 +23,32 @@ This guide has been tested on Equilinox 1.6.0, but should in principle work with
 
 - Install standalone Java if you don't have it
 - Run your command line, making it use your dedicated GPU if possible
-- `java -jar [Equilinox jar] -Xms 1024m -Xmx 1024m`
+- Change Equilinox Steam properties to `"C:\your-path-to-java\bin\javaw.exe" -jar EquilinoxWindows.jar %command%`
 
 ## Steps to Fix Performance: The Guide
 
 ### Step 1: Install Java
 
-Equilinox is a game made with Java. It comes with its own version of Java, but that version won't work for this guide. You will need a standalone version of Java 8 from Oracle. Make sure you get the 64-bit version. (unless your OS is 32-bit, but that is highly unlikely). If you already have installed standalone Java, you should be good to go.
+Equilinox is a game made with Java. It comes with its own version of Java, but that version won't work for this guide. There are multiple sources available for the most recent Java version, but the current recommended one is AdoptOpenJDK to be found at https://adoptium.net/. Make sure you get the 64-bit version. (unless your OS is 32-bit, but that is highly unlikely). If you already have installed standalone Java, you should be good to go.
 
-The version of Java recommended above is a safe choice, as it is similar to the version that Equilinox uses. Depending on your needs, you may have success installing a different version of Java. This carries its own risks, and is beyond the scope of this guide, but is discussed in the Appendix.
+The most recent Java version is a much newer version than the old one that Equilinox uses, but should cause no issues when running the game. In case it does, it's pretty simple to revert to that version again.
 
-### Step 2: Locate Java and Equilinox
+### Step 2: Locate Java
 
-You will need to know the full file paths for your currently installed version of Java and Equilinox in order to use them later.
+You will need to know the full file path for the version of Java you just installed.
 
-### Step 3: Choose bash or Powershell
+### Step 3: Change Equilinox' properties in Steam
 
-From this step forward, you will need to decide what command line program to use.
+Right-click Equilinox in the list of games in your Steam library, and select "Properties". A new window will open which should have a text field with the label "Launch options" in the middle. In this text field, enter the following text, replacing the path to Java that you determined in the step before: `"C:\your-path-to-java\bin\javaw.exe" -jar EquilinoxWindows.jar %command%`
 
-If you are on Linux/Mac, the default command line program comes with bash, which is covered by this guide.
+### Step 3.1: (Optional) Give Equilinox access to more memory
 
-This guide also covers Powershell, which is one of the default command line programs shipped with Windows.
+This is a slightly advanced step and shouldn't normally be necessary. By default, the newer Java versions use 25% of your computers memory. As long as you have 4GB or more RAM, you should have more than enough to run Equilinox with that. So don't worry if you have 4GB or more. However, on certain low-end machines with less RAM, you may want to increase the RAM dedicated to Equilinox to something larger than 25% of your total memory.
 
-Figure out how to run your command line program of choice, then close the program and move on to the next step.
+To do that, navigate to Equilinox install directory. Open the file `EquilinoxWindows.jar` with 7zip. Navigate to the `META-INF` folder inside the zip. Select `MANIFEST.MF` and right-click -> Edit. Where it says `Launcher-VM-Args: `, add `-Xmx1024m`, so that the line looks like `Launcher-VM-Args: -Xmx1024m`, then save the file. 7zip should now ask you if you want to update the file in the zip, say yes.
 
-### Step 4: Create a Tool to Run Equilinox with More Memory
+You can also change the 1024 to any amount of memory you want to allocate to Equilinox.
 
-In the folder where your Equilinox program is located, create a file called "Equilinox_launch.sh" if you are using bash, or "Equilinox_launch.bat" if you are using Powershell.
+### Step 4: Start Equilinox
 
-Open the new file in a text editor and type one of the following:
-
-**Equilinox_launch.sh (bash):**
-
-~~~
-export PATH="/path/to/java/installation":$PATH
-java -jar EquilinoxWindows.jar -Xms 1024m -Xmx 1024m
-~~~
-
-**Equilinox_launch.bat (Powershell):**
-
-~~~
-SET PATH=P:\ath\to\java\installation;%PATH%
-java -jar EquilinoxWindows.jar -Xms 1024m -Xmx 1024m
-~~~
-
-Replace `path/to/java/installation` with the folder containing the Java program (java.exe on Windows).
-
-Replace `EquilinoxWindows.jar` as applicable for your Equilinox installation.
-
-Once you have typed this, save the file.
-
-What does this file do? The first line temporarily helps your command line find Java. The second line tells Java to run Equilinox with 1024 megabytes of RAM, rather than the 256 megabytes maximum Equilinox usually uses. Other values to consider are 512 for machines with little RAM to spare, or 1536 if Equilinox's memory usage is still hovering near the max.
-
-So, why might Equilinox need more RAM? Java programs like Equilinox use garbage collection to manage memory usage. The lower the max RAM, the harder the garbage collector must work to keep RAM usage under the max value, which can cause lag spikes and increased CPU usage. In addition, there may be situations where Equilinox simply needs more than 256 megabytes of RAM to run.
-
-### Step 5: Run the game
-
-This step should be done each time you want to run Equilinox.
-
-Open your command line program of choice. If you are on Windows and have dedicated graphics (AMD/Nvidia), you should open the command line program in a special way: by right-clicking on the command line program and selecting "Run With Graphics Processor" > AMD or Nvidia. This will cause the command line program, and any programs originating from it, to use that graphics processor.
-
-Next, you should navigate your command line to your Equilinox folder, by typing the following command and pressing enter:
-
-**Go to Equilinox Folder (bash and Powershell):**
-
-~~~
-cd path/to/equilinox
-~~~
-
-On Powershell, the path must have backslashes, not forward-slashes.
-
-As a sanity check, see if you are in the right folder.
-
-**See Equilinox Folder directory contents (bash and Powershell)**
-
-~~~
-ls
-~~~
-
-Your command line should output EquilinoxWindows.jar (or the equivalent for Mac or Linux), the Equilinox_launch file you created, and some other Equilinox-related files and folders.
-
-Finally, run Equilinox using your tool.
-
-**Run Equilinox_launch.sh (bash)**
-
-~~~
-./Equilinox_launch.sh
-~~~
-
-**Run Equilinox_launch.bat (Powershell)**
-
-~~~
-./Equilinox_launch.bat
-~~~
-
-When in your world, you should see RAM usage for Equilinox be above 256, but at or below the max value you have set. In Task Manager or equivalent, the program will not be called Equilinox, and instead will just be called Java.
-
-## Appendix
-
-### Alternative Version of Java
-
-An Equilinox mod developer recommends using OpenJDK, with Java 11. OpenJDK is effectively the same as Oracle's official Java, but may contain additional fixes:
-
-https://github.com/EquilinoxModKitProject/Equilinox-Mod-Kit/wiki/Installing-Java
-
-Discussion of an alternative Java 8 version, using OpenJ9, in the Modded Minecraft community. It has risks, but may improve performance:
-
-https://www.reddit.com/r/feedthebeast/comments/as6p87/java_vms_and_you_how_to_reduce_your_ram_and_cpu/
-
-### Java on your system path
-
-If you have permanently added Java to your system PATH, you can omit the first line in your Equilinox_launch tool. Note that you can only do this with one Java version.
+You can simply start Equilinox as normal through Steam, and the new Java version you specified should be used instead, hopefully greatly increasing performance.
